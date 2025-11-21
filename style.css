@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -73,3 +73,26 @@ button:focus {
     outline: 3px solid #67b25d;
     outline-offset: 2px;
 }
+
+#msg {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    display: none;
+}
+
+#msg.error {
+    background-color: #fee;
+    color:#c00;
+    border: 2px solid #c00;
+    display: block;
+}
+
+#msg.success {
+    background-color: #efe;
+    color: #060;
+    border: 2px solid #060;
+    display: block;
+}
+
