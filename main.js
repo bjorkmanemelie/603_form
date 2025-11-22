@@ -23,13 +23,13 @@ form.addEventListener("submit", function (e) {
     }
 
     if (!emailInput.value.trim()) {
-      emailInput.classList.add("invalid", "true");
+      emailInput.classList.add("invalid");
       emailInput.setAttribute("aria-invalid", "true");
     }
 
     if (!passwordInput.value.trim()) {
       passwordInput.classList.add("invalid");
-      passwordInput.setAttribute("aria-label", "true");
+      passwordInput.setAttribute("aria-invalid", "true");
     }
 
     console.log("An empty field!");
@@ -37,10 +37,18 @@ form.addEventListener("submit", function (e) {
     msg.className = "success";
     msg.textContent = "Thank you for your registration! ✅ ";
 
+    nameInput.classList.add("valid");
+    nameInput.classList.remove("invalid");
+    nameInput.setAttribute("aria-invalid", "false");
+
+    emailInput.classList.add("valid");
+    emailInput.classList.remove("invalid");
+    emailInput.setAttribute("aria-invalid", "false");
+
+    passwordInput.classList.add("valid");
+    passwordInput.classList.remove("invalid");
+    passwordInput.setAttribute("aria-invalid", "false");
+
     form.reset();
   }
 });
-
-console.log("The form has been send!");
-
-console.log(nameInput, emailInput, passwordInput);
